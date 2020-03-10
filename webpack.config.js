@@ -8,7 +8,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: [".js", ".jsx"]
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
@@ -21,16 +21,18 @@ module.exports = {
             },
             {
                 test: /\.html$/,
-                use: {
-                    loader: 'html-loader'
-                }
+                use: [
+                    {
+                        loader: 'html-loader'
+                    }
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: './public/index.html',
-            file: './index.html'
+            template: "./public/index.html",
+            file: "./index.html"
         })
     ]
 }
